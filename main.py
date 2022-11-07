@@ -15,5 +15,15 @@
 # input = ' '.join(words)
 # print(input)
 
-z = "3.2"
-print(int(z))
+
+def testing(x, y):
+    bad(x)
+    return x * y
+
+def bad(x):
+    pass
+x = 2
+y = 5
+test = testing(x, y)
+bad(x)
+print(test)
