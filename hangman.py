@@ -1,3 +1,5 @@
+import string
+
 import requests
 import os
 
@@ -39,7 +41,7 @@ class HangMan:
 
 
     def inputGuess(self, guess):
-        if guess.replace(' ', '') != '' and len(guess) == 1 and guess not in self.letters:
+        if guess.replace(' ', '') != '' and len(guess) == 1 and guess not in self.letters and guess in string.ascii_lowercase:
             self.letters.append(guess)
 
             for l in self.word:
@@ -54,7 +56,7 @@ class HangMan:
             else:
                 self.lives -= 1
                 self.wrongGuesses += 1
-                print(self.lives)
+                print("lives left:", self.lives)
             if self.lives < 0:
                 self.loseGame()
         else:
